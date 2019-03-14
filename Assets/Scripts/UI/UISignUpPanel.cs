@@ -1,16 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UISignUpPanel : MonoBehaviour {
+namespace PDA1.UI
+{
+    /// <summary>UI panel for registering an account.</summary>
+    public class UISignUpPanel : UIPanel
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        public InputField emailField;
+        public InputField usernameField;
+        public InputField passwordField;
+        public InputField verifyPasswordField;
+
+
+        // ----------------------------------------------------- //
+
+        public void DoSignUp()
+        {
+
+            Debug.Log("Doing sign up...");
+
+
+        }
+
+        // ----------------------------------------------------- //
+
+    }
+
 }

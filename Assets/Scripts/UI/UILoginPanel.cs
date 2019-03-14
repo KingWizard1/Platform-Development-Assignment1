@@ -4,23 +4,33 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class UILoginPanel : MonoBehaviour {
+namespace PDA1.UI
+{
+    /// <summary>UI panel for game login.</summary>
+    public class UILoginPanel : UIPanel
+    {
 
-    public InputField usernameField;
-    public InputField passwordField;
+        public InputField usernameField;
+        public InputField passwordField;
 
-    public Button playButton;
+        // ----------------------------------------------------- //
 
-    public TextMeshProUGUI signupLink;
-    public TextMeshProUGUI forgotPasswordLink;
+        public void DoLogin()
+        {
 
-    // ----------------------------------------------------- //
+            var user = usernameField.text;
+            var pass = passwordField.text;
+
+            Debug.Log("Do Login!");
+
+        }
+
+        // ----------------------------------------------------- //
 
 
-    // ----------------------------------------------------- //
+        // ----------------------------------------------------- //
 
 
-    // ----------------------------------------------------- //
-
+    }
 
 }

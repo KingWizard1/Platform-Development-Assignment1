@@ -1,16 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UIPasswordResetPanel1 : MonoBehaviour {
+namespace PDA1.UI
+{
+    /// <summary>UI panel for resetting the password on a user account (Part 1)</summary>
+    public class UIPasswordResetPanel1 : UIPanel
+    {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        public InputField emailField;
+
+
+        // ----------------------------------------------------- //
+
+        public void SendResetCode()
+        {
+
+            Debug.Log("Sending reset code...");
+
+
+        }
+
+        // ----------------------------------------------------- //
+
+    }
+
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -350,13 +350,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 103606652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e803a5419c4542c4d918717e97e78dd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7884a31742dec8749b7297c1f99193e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _LoginPanel: {fileID: 0}
-  _SignUpPanel: {fileID: 0}
-  _PasswordResetPanel1: {fileID: 0}
-  _PasswordResetPanel2: {fileID: 0}
+  _LoginPanel: {fileID: 397010373}
+  _SignUpPanel: {fileID: 1242864120}
+  _PasswordResetPanel1: {fileID: 989444869}
+  _PasswordResetPanel2: {fileID: 1417648678}
 --- !u!224 &105054392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
@@ -968,6 +968,7 @@ GameObject:
   - component: {fileID: 369277978}
   - component: {fileID: 369277980}
   - component: {fileID: 369277979}
+  - component: {fileID: 369277981}
   m_Layer: 5
   m_Name: ForgotPassLink
   m_TagString: Untagged
@@ -1114,6 +1115,58 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 369277977}
   m_CullTransparentMesh: 0
+--- !u!114 &369277981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 369277977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 369277979}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 103606654}
+        m_MethodName: SwitchToResetPanel1
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &391099218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1520,6 +1573,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 522526009}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1665,6 +1723,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 989444869}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SendResetCode
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
@@ -1875,6 +1958,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 826104107}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2005,6 +2093,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 397010373}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoLogin
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
@@ -2044,6 +2157,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 517882034}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2209,6 +2327,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 103606654}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToLoginPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
@@ -2568,6 +2711,7 @@ GameObject:
   - component: {fileID: 719300021}
   - component: {fileID: 719300023}
   - component: {fileID: 719300022}
+  - component: {fileID: 719300024}
   m_Layer: 5
   m_Name: SignUpLink
   m_TagString: Untagged
@@ -2606,7 +2750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2714,6 +2858,58 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 719300020}
   m_CullTransparentMesh: 0
+--- !u!114 &719300024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 719300020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 719300022}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 103606654}
+        m_MethodName: SwitchToSignUpPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &742676757
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,6 +2992,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 517882034}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2941,6 +3142,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1242864120}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoSignUp
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
@@ -3319,9 +3545,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 989444867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a53cf219fe51e8488d4c1dc1d465264, type: 3}
+  m_Script: {fileID: 11500000, guid: bb98b091ceaa9da48bc0dc1ec17d2e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emailField: {fileID: 1784911446}
 --- !u!224 &1032054621 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
@@ -3409,7 +3636,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1135566174}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 158}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 719300021}
@@ -3452,6 +3679,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 522526009}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -3608,6 +3840,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 103606654}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToLoginPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
@@ -3877,9 +4134,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1242864118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cce8baf6be56634989f3413ba78a9e7, type: 3}
+  m_Script: {fileID: 11500000, guid: e991798bf23336540a2afd8c6ff5f7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  emailField: {fileID: 18545812}
+  usernameField: {fileID: 1736056622}
+  passwordField: {fileID: 2126150575}
+  verifyPasswordField: {fileID: 1502526012}
 --- !u!1 &1380245708
 GameObject:
   m_ObjectHideFlags: 0
@@ -4208,9 +4469,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1417648676}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13f7d2cc07b3c2b4388f32039cba39c2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1744b7f60581f324c83231e851a465cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  codeField: {fileID: 642642669}
+  newPasswordField: {fileID: 1392116999}
+  verifyPasswordField: {fileID: 266517891}
 --- !u!1 &1420742383
 GameObject:
   m_ObjectHideFlags: 0
@@ -4811,6 +5075,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1127884994}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -4958,6 +5227,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1417648678}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: DoPasswordReset
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
@@ -5259,6 +5553,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1127884994}
     m_Modifications:
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224929844140872820, guid: 163c92252f7c45547b92255e27f75f4b,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -5415,6 +5714,31 @@ Prefab:
       value: 
       objectReference: {fileID: 12800000, guid: 8de54569e2057f04e835bdc21130fa68,
         type: 3}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 103606654}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SwitchToLoginPanel
+      objectReference: {fileID: 0}
+    - target: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 163c92252f7c45547b92255e27f75f4b, type: 2}
   m_IsPrefabAsset: 0
