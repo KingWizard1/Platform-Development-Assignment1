@@ -1278,9 +1278,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   usernameField: {fileID: 440434368}
   passwordField: {fileID: 323363869}
-  playButton: {fileID: 891849706}
-  signupLink: {fileID: 719300022}
-  forgotPasswordLink: {fileID: 369277979}
 --- !u!1 &417965162
 GameObject:
   m_ObjectHideFlags: 0
@@ -3387,12 +3384,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 826294209}
   m_CullTransparentMesh: 0
---- !u!114 &891849706 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114421174934407830, guid: 163c92252f7c45547b92255e27f75f4b,
-    type: 2}
-  m_PrefabInternal: {fileID: 539092447}
-  m_Script: {fileID: 1392445389, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &956773888
 GameObject:
   m_ObjectHideFlags: 0
@@ -3883,6 +3874,7 @@ GameObject:
   - component: {fileID: 1188932478}
   - component: {fileID: 1188932480}
   - component: {fileID: 1188932479}
+  - component: {fileID: 1188932481}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -3932,9 +3924,20 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 440434366}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!114 &1188932481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1188932477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08079fb877e22474681ad4c3f03ae2c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1219117928
 GameObject:
   m_ObjectHideFlags: 0
