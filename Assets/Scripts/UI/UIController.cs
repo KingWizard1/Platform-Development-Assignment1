@@ -8,6 +8,10 @@ namespace PDA1.UI
     public class UIController : MonoBehaviour
     {
 
+        public static UIController Current { get; private set; }
+
+        // ------------------------------------------------- //
+
         public UILoginPanel _LoginPanel;
 
         public UISignUpPanel _SignUpPanel;
@@ -17,10 +21,22 @@ namespace PDA1.UI
         public UIPasswordResetPanel2 _PasswordResetPanel2;
 
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
+        private UIController()
+        {
+            if (Current == null)
+                Current = this;
+        }
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
+
+        private void Start()
+        {
+            SwitchToLoginPanel();
+        }
+
+        // ------------------------------------------------- //
 
         // Ideally, I'd use a single method that accepts an enum parameter
         // to determine which panel to show, but the Button component on
@@ -44,13 +60,23 @@ namespace PDA1.UI
             _PasswordResetPanel2.Show();
         }
 
-        public void SwitchToLoginPanel()
+        public void SwitchToLoginPanel(string username = null)
         {
             HideAllPanels();
+
             _LoginPanel.Show();
+
+            // If a username was provided, auto put it in the username field.
+            // Then set focus on the password field, so the user can immediately enter it.
+            if (username != null) {
+                _LoginPanel.usernameField.text = username;
+                _LoginPanel.passwordField.Select();
+                _LoginPanel.passwordField.ActivateInputField();
+            }
+
         }
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
         public void HideAllPanels()
         {
@@ -62,7 +88,7 @@ namespace PDA1.UI
 
         }
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
     }
 

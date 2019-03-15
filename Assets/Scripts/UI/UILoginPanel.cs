@@ -13,7 +13,21 @@ namespace PDA1.UI
         public InputField usernameField;
         public InputField passwordField;
 
-        // ----------------------------------------------------- //
+        public Text errorText;
+
+        // ------------------------------------------------- //
+
+        private void Start()
+        {
+            errorText.text = string.Empty;
+        }
+
+        private void OnEnable()
+        {
+            errorText.text = string.Empty;
+        }
+
+        // ------------------------------------------------- //
 
         public void DoLogin()
         {
@@ -23,12 +37,23 @@ namespace PDA1.UI
 
             Debug.Log("Do Login!");
 
+            var response = DBContext.Login(usernameField.text, passwordField.text);
+
+            if (response == "Success")
+            {
+                errorText.text = "Login Successful!";
+            }
+            else
+            {
+                errorText.text = response;
+            }
+
         }
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
 
     }

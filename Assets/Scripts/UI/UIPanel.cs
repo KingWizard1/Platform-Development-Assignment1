@@ -12,7 +12,7 @@ namespace PDA1.UI
 
 
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
         /// <summary>Makes this panel visible. Can be overriden to extend functionality.</summary>
         public virtual void Show()
@@ -26,7 +26,7 @@ namespace PDA1.UI
             gameObject.SetActive(false);
         }
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
     }
 

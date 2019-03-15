@@ -11,18 +11,51 @@ namespace PDA1.UI
 
         public InputField emailField;
 
+        public Text errorText;
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
+
+        private void Start()
+        {
+            errorText.text = string.Empty;
+        }
+
+        private void OnEnable()
+        {
+            errorText.text = string.Empty;
+        }
+
+        // ------------------------------------------------- //
 
         public void SendResetCode()
         {
+            // Validate inputs
+            if (string.IsNullOrEmpty(emailField.text.Trim())) {
+                errorText.text = "Please enter your e-mail address.";
+                return;
+            }
+
+            // PHP GetUsernameFromEmail
+            var response = DBContext.GetUsernameFromEmail(emailField.text);
+
+            // Show error if no user found
+            if (response == "No user found") {
+                errorText.text = "Account does not exist.";
+                return;
+            }
+
+
+            // Now we have username
+            var username = response;
 
             Debug.Log("Sending reset code...");
 
 
+
+
         }
 
-        // ----------------------------------------------------- //
+        // ------------------------------------------------- //
 
     }
 
