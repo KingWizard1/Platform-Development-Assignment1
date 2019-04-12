@@ -9,7 +9,7 @@ namespace PDA1.UI
     public class UIPasswordResetPanel1 : UIPanel
     {
 
-        public InputField emailField;
+        public InputField inputField;
 
         public Text errorText;
 
@@ -30,13 +30,13 @@ namespace PDA1.UI
         public void SendResetCode()
         {
             // Validate inputs
-            if (string.IsNullOrEmpty(emailField.text.Trim())) {
+            if (string.IsNullOrEmpty(inputField.text)) {
                 errorText.text = "Please enter your e-mail address.";
                 return;
             }
 
             // PHP GetUsernameFromEmail
-            var response = DBContext.GetUsernameFromEmail(emailField.text);
+            var response = DBContext.GetUsernameFromEmail(inputField.text);
 
             // Show error if no user found
             if (response == "No user found") {
@@ -44,18 +44,33 @@ namespace PDA1.UI
                 return;
             }
 
-
-            // Now we have username
+            // Now we have username (retrieved using the entered email address)
             var username = response;
 
-            Debug.Log("Sending reset code...");
+            // Feedback that something is happening
+            errorText.text = "Sending reset code...";   // Not an error, lol.
+
+            // Generate a reset code
+            var resetCode = WebFunctions.Generate6CharResetCode();
+
+            // Send reset email
+            try {
+                WebFunctions.SendResetEmail(inputField.text, username, resetCode);
+            }
+            catch (System.Exception ex)
+            {
+                errorText.text = "Ex: " + ex.Message;
+                return;
+            }
 
 
-
-
+            // Go to next password reset panel
+            // This is where the user will enter the code we sent to them, and their new password.
+            UIController.main.SwitchToResetPanel2(username, resetCode);
         }
 
         // ------------------------------------------------- //
+
 
     }
 

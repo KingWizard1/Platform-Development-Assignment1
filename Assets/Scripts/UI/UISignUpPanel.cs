@@ -41,12 +41,12 @@ namespace PDA1.UI
                 string.IsNullOrEmpty(usernameField.text) ||
                 string.IsNullOrEmpty(passwordField.text) ||
                 string.IsNullOrEmpty(verifyPasswordField.text)) {
-                Debug.LogError("One or more fields does not have a value.");
+                errorText.text = "All fields must be filled out.";
                 return;
             }
 
             if (passwordField.text != verifyPasswordField.text) {
-                Debug.LogError("The entered passwords do not match.");
+                errorText.text = "The entered passwords do not match.";
                 return;
             }
 
@@ -56,10 +56,10 @@ namespace PDA1.UI
 
             // If successful, switch to login panel with the username already filled.
             if (response == "Success")
-                UIController.Current.SwitchToLoginPanel(usernameField.text);
+                UIController.main.SwitchToLoginPanel(usernameField.text);
             else
             {
-                errorText.text = response;
+                errorText.text = "Error. " + response;
                 Debug.LogError("Failed to create user: \"" + response + "\"");
             }
 

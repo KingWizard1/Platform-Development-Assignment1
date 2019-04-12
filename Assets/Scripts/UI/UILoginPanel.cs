@@ -35,8 +35,6 @@ namespace PDA1.UI
             var user = usernameField.text;
             var pass = passwordField.text;
 
-            Debug.Log("Do Login!");
-
             var response = DBContext.Login(usernameField.text, passwordField.text);
 
             if (response == "Success")

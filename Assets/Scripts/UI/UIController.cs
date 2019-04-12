@@ -8,7 +8,7 @@ namespace PDA1.UI
     public class UIController : MonoBehaviour
     {
 
-        public static UIController Current { get; private set; }
+        public static UIController main { get; private set; }
 
         // ------------------------------------------------- //
 
@@ -25,8 +25,8 @@ namespace PDA1.UI
 
         private UIController()
         {
-            if (Current == null)
-                Current = this;
+            if (main == null)
+                main = this;
         }
 
         // ------------------------------------------------- //
@@ -54,10 +54,12 @@ namespace PDA1.UI
             _PasswordResetPanel1.Show();
         }
 
-        public void SwitchToResetPanel2()
+        public void SwitchToResetPanel2(string username, string expectedResetCode)
         {
             HideAllPanels();
             _PasswordResetPanel2.Show();
+            _PasswordResetPanel2.TargetUsername = username;
+            _PasswordResetPanel2.ExpectedResetCode = expectedResetCode;
         }
 
         public void SwitchToLoginPanel(string username = null)
